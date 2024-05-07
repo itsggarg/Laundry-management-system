@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../particles.js-master/particles.js-master/demo/css/style.css">
+    <title>Laundry management system</title>
+    <style>
+        body {
+            background-color: #f1e6f9;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            background-image: url("home.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        
+
+    h1 {
+        font-size: 2.6em;
+        color: #f9b6b6;
+        margin: 0.5em 0;
+    }
+    
+    h2 {
+        font-size: 2em;
+        color: #c1a700;
+        margin: 0.5em 0;
+    }
+    
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 2px;
+    }
+    
+    li {
+        display: block;
+        margin-right: 1em;
+        width: 40%;
+        padding: 2px;
+    }
+    
+    a {
+        display: block;
+            padding: 2em;
+            background-color: #e3d7b8;
+        color: #333;
+        text-decoration: none;
+        border: 1px solid #0f0000;
+        border-radius: 1.2em;
+        width: 60%;
+        margin-right: 10px;
+
+    }
+
+  .h{
+    position:absolute;
+    top: 10px;
+    left: 10px;
+  }
+
+  .g{
+    position: relative;
+  }
+    
+    a:hover {
+        color: #0a4c7f;
+    }
+</style>
+</head>
+<body>
+  <div id="particles.js">
+
+    <center><h1>Resilient Launders!</h1></center>
+    <center><h2>Admin panel</h2></center>
+    <form action="/"method="post">
+      <div id="empContainer"  > 
+         
+        <div >
+          <a href="/employee" class="h" >Employee</a></div>
+          <div id="cusContainer">  
+            <div>  
+              <a href="/customer">Customer</a>
+            </div>
+            
+            <div id="supContainer">  
+              <div>  
+                <a href="/supplier">Supplier</a>
+              </div>
+              <div id="depContainer">  
+                <div>  
+                  <a href="/depository">Depository</a>
+                </div>
+                <div id="sbContainer">  
+                  <div>  
+                    <a href="/transactions">Supplier Bills</a>
+                  </div>
+                  <div id="billContainer">  
+                    <div>  
+             <a href="/bill">Customer Bills</a>
+            </div>
+            
+            <div id="clothContainer">  
+              <div>  
+                <a href="/cloth">cloth</a>
+              </div>
+              
+              <div id="service_rate_listContainer">  
+                <div>  
+                  <a href="/rate_list">Rate list</a>
+                </div>
+                <div id="supplier_rate_listContainer">  
+                  <div>  
+                    <a href="/supplier_rate_list">Supplier rate list</a>
+                  </div>
+                  
+                  
+                </form>
+                
+                
+              </div>
+              <script src="../particles.js-master/particles.js-master/particles.js"></script>
+          <script src="../particles.js-master/particles.js-master/demo/js/app.js"></script>
+              </body>
+              </html>
+              
+              
+
+
+
+<style>
+    /* Style the form container */
+    #empContainer {
+      position: absolute;
+      display: block;
+      left: 360px;
+     /* margin: 20px auto;*/
+      max-width: 200px;
+      font-family:cursive;
+      font: size 60px;;
+      font-weight: bolder;
+      color: aqua;
+      text-shadow: #0f0000;
+      text-align: center;
+      padding: 10px;
+      height: 200px;
+      width: 180px;
+    }
+
+
+    #cusContainer {
+    position: absolute;
+    top: 120px;
+    left: 2px;
+    display: block;
+    margin: 10px auto;
+    max-width: 200px;
+    font-family:cursive;
+    font-size: medium;
+      font-weight: bolder;
+      color: aqua;
+      text-shadow: #0f0000;
+      text-align: center;
+    padding: 12px;
+    height: 200px;
+    width: 180px;
+    
+    }
+
+
+    #supContainer {
+    position: relative;
+    top: -240px;
+    left: 260px;
+    display: block;
+    margin: 10px auto;
+    max-width: 200px;
+    font-family:cursive;
+    font-size: medium;
+      font-weight: bolder;
+      color: aqua;
+      text-shadow: #0f0000;
+      text-align: center;
+    padding: 10px;
+    height: 200px;
+    width: 180px;
+    }
+
+    #depContainer {
+    position: relative;
+    top: 22px;
+    left: -10px;
+    display: block;
+    margin: 10px auto;
+    max-width: 200px;
+    font-family:cursive;
+    font-size: medium;
+      font-weight: bolder;
+      color: aqua;
+      text-shadow: #0f0000;
+      text-align: center;
+    padding: 10px;
+    height: 200px;
+    width: 180px;
+    }
+
+    #sbContainer {
+    position: relative;
+    top: 20px;
+    left: -280px;
+    display: block;
+    margin: 10px auto;
+    max-width: 200px;
+    font-family:cursive;
+    font-size: medium;
+      font-weight: bolder;
+      color: aqua;
+      text-shadow: #0f0000;
+      text-align: center;
+    padding: 10px;
+    height: 200px;
+    width: 180px;
+    }
+
+    #billContainer {
+      position: absolute;
+      display: block;
+      top: 0px;
+      left: 280px;
+     /* margin: 20px auto;*/
+      max-width: 200px;
+      font-family:cursive;
+      font: size 60px;;
+      font-weight: bolder;
+      color: aqua;
+      text-shadow: #0f0000;
+      text-align: center;
+      padding: 10px;
+      height: 200px;
+      width: 180px;
+    }
+
+    #clothContainer {
+      position: absolute;
+      display: block;
+      top: 120px;
+      left: -280px;
+     /* margin: 20px auto;*/
+      max-width: 200px;
+      font-family:cursive;
+      font: size 60px;;
+      font-weight: bolder;
+      color: aqua;
+      text-shadow: #0f0000;
+      text-align: center;
+      padding: 10px;
+      height: 200px;
+      width: 180px;
+    }
+    #service_rate_listContainer {
+      position: absolute;
+      display: block;
+      top: 0px;
+      left: 280px;
+     /* margin: 20px auto;*/
+      max-width: 200px;
+      font-family:cursive;
+      font: size 60px;;
+      font-weight: bolder;
+      color: aqua;
+      text-shadow: #0f0000;
+      text-align: center;
+      padding: 10px;
+      height: 200px;
+      width: 180px;
+    }
+
+    #supplier_rate_listContainer {
+      position: absolute;
+      display: block;
+      left: -140px;
+     /* margin: 20px auto;*/
+      max-width: 200px;
+      font-family:cursive;
+      font: size 60px;;
+      font-weight: bolder;
+      color: aqua;
+      text-shadow: #0f0000;
+      text-align: center;
+      padding: 10px;
+      height: 200px;
+      width: 180px;
+    }
+
+  
+
+
+
+
+    
+    
+    /* Style the form labels */
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight:bolder;
+    }
+  
+    /* Style the form inputs */
+    input[type="text"],
+    input[type="number"],
+    select {
+      width: 60%;
+      padding:10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: none;
+      box-shadow: 0px 0px 5px #aaa;
+    }
+  
+    /* Style the submit button */
+    input[type="submit"] {
+      background-color: #8d5c27;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+  
+    input[type="submit"]:hover {
+      background-color: #3e8e41;
+    }
+    
+
+
+  </style>

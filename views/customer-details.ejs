@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>customer details</title>
+  
+  
+</head>
+
+<style>
+   .vertical-divisions th,
+   .vertical-divisions td {
+  border-left: 1px solid black;
+}
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      
+    }
+
+    th, td {
+      text-align: left;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      font-family: Tahoma, Verdana, sans-serif;
+    }
+
+    th {
+      background-color: #49b8e3;
+      color: white;
+    }
+
+    tr:hover {
+      background-color: #f5f5f5;
+    }
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* Header styles */
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  font-size: 36px;
+  text-transform: uppercase;
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 40px;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+th {
+  background-color: #49b8e3;
+  color: #fff;
+  text-align: left;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+/* Responsive styles */
+@media (max-width: 767px) {
+  table {
+    font-size: 14px;
+  }
+  
+  th, td {
+    padding: 8px;
+  }
+  
+  th {
+    font-size: 16px;
+  }
+  
+  h1 {
+    font-size: 28px;
+  }
+}
+
+
+  </style>
+
+<body>
+  
+    <table class="vertical-divisions"></table>
+    <h1>Customer Details</h1>
+
+
+<% if (results && results.length > 0) { %>
+  <table>
+    <tr>
+      <th>customer Code</th>
+      <th>customer Name</th>
+      <th>previous_money_dues</th>
+      <th>cloth_code</th>
+      <th>current_status</th>
+      <th>service</th>
+      <th>pickup_date</th>
+      <th>drop_date</th>
+      <th>cost_of_cleaning</th>
+      <th>type_of_cloth</th>
+    </tr>
+    <% results.forEach(function(results) { %>
+      <tr>
+        <td><%= results.customer_code %></td>
+        <td><%= results.name %></td>
+        <td><%= results.previous_money_dues %></td>
+        <td><%= results.cloth_code %></td>
+        <td><%= results.current_status %></td>
+        <td><%= results.service %></td>
+        <td><%= results.pickup_date %></td>
+        <td><%= results.drop_date %></td>
+        <td><%= results.cost_of_cleaning %></td>
+        <td><%= results.type_of_cloth %></td>
+      </tr>
+    <% }); %>
+   
+  </table>
+<% } else { %>
+  <p>No employee details found</p>
+<% } %>
+
+
+</body>
+</html>
+

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bill details</title>
+  
+  
+</head>
+
+<style>
+   .vertical-divisions th,
+   .vertical-divisions td {
+  border-left: 1px solid black;
+}
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      
+    }
+
+    th, td {
+      text-align: left;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      font-family: Tahoma, Verdana, sans-serif;
+    }
+
+    th {
+      background-color: #49b8e3;
+      color: white;
+    }
+
+    tr:hover {
+      background-color: #f5f5f5;
+    }
+
+
+  </style>
+
+<body>
+  
+    <table class="vertical-divisions"></table>
+    <h1>Bill Details of <%= results[0].name %></h1>
+
+
+<% if (results && results.length > 0) { %>
+  <table>
+    <tr>
+    <th>Bill code</th>
+      <th>customer Code</th>
+      <th>customer Name</th>
+      <th>Total amount</th>
+      <th>date</th>
+      <th>payment status</th>
+    </tr>
+    <% results.forEach(function(results) { %>
+      <tr>
+        <td><%= results.bill_code %></td>
+        <td><%= results.customer_code %></td>
+        <td><%= results.name %></td>
+        <td><%= results.total_amount %></td>
+        <td><%= results.date %></td>
+        <td><%= results.payment_status %></td>
+      </tr>
+    <% }); %>
+   
+  </table>
+<% } else { %>
+  <p>No employee details found</p>
+<% } %>
+
+
+</body>
+</html>

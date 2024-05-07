@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supplier</title>
+
+
+
+    <style>
+        table {
+          border-collapse: collapse;
+          width: 80%;
+          
+        }
+    
+        th, td {
+          text-align: left;
+          padding: 10px;
+          border-bottom: 1px solid #ddd;
+          font-family: Tahoma, Verdana, sans-serif;
+        }
+    
+        th {
+          background-color: #49b8e3;
+          color: white;
+        }
+    
+        tr:hover {
+          background-color: #f5f5f5;
+        }
+      </style>
+
+
+<style>
+    /* Style the form container */
+    #supplierFormContainer {
+      display: block;
+      margin: 20px auto;
+      max-width: 500px;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+
+    #searchContainer {
+    position: relative;
+    top: -60px;
+    left: 50px;
+    display: block;
+    margin: 0 auto;
+    max-width: 500px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: 2px solid black;
+    padding: 10px;
+    
+    }
+
+
+    
+  
+    /* Style the form labels */
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+  
+    /* Style the form inputs */
+    input[type="text"],
+    input[type="number"],
+    select {
+      width: 80%;
+      padding:10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: none;
+      box-shadow: 0px 0px 5px #aaa;
+    }
+  
+    /* Style the submit button */
+    input[type="submit"] {
+      background-color: #8d5c27;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+  
+    input[type="submit"]:hover {
+      background-color: #3e8e41;
+    }
+
+    /* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* Header styles */
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  font-size: 36px;
+  text-transform: uppercase;
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 40px;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+th {
+  background-color: #49b8e3;
+  color: #fff;
+  text-align: left;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+/* Responsive styles */
+@media (max-width: 767px) {
+  table {
+    font-size: 14px;
+  }
+  
+  th, td {
+    padding: 8px;
+  }
+  
+  th {
+    font-size: 16px;
+  }
+  
+  h1 {
+    font-size: 28px;
+  }
+}
+
+    
+
+
+  </style>
+
+
+
+
+
+<div style="display:inline-block; width: 20%;">
+<div style="display:inline-block; width: 100%; border: 2px solid black; padding: 10px;">
+
+<div id="supplierFormContainer">
+<h2>Enter Details</h2>
+<form method="POST" action="/addSupplier">
+  <label for="id">Supplier ID:</label>
+  <input type="text" id="supplier_code" name="supplier_code"><br>
+
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name"><br>
+
+  <label for="total_dues">total_dues:</label>
+  <input type="number" id="total_dues" name="total_dues"><br>
+
+
+  <input type="submit" value="Add Supplier">
+</form>
+</div>
+</div>
+</div>
+
+<div style="display:inline-block; width: 20%;">
+
+  <div id="searchContainer">   
+<div>
+    <form method="GET" action="/searchsupplier>
+      <label for="sname">Search by Name:</label>
+      <input type="text" id="sname" name="sname">
+      <button type="submit">Search</button>
+    </form>
+  </div>
+
+<h4>OR</h4>
+
+<div>
+    <form method="GET" action="/searchSupplierByCode">
+      <label for="supplier_code">Search by supplier code:</label>
+      <input type="number" id="supplier_code" name="supplier_code">
+      <button type="submit">Search</button>
+    </form>
+  </div>
+</div>
+    </div>
+  
+
+
+
+
+<body>
+    <table>
+        <thead>
+          <tr>
+            <th>supplier code</th>
+            <th>Name</th>
+            <th>total_dues</th>
+            <th>view details</th>
+            <th>update rate list</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% suppliers.forEach(function(supplier) { %>
+            <tr>
+              <td><form action="/supplier"method="post"><%= supplier.supplier_code %></form></td>
+              <td><%= supplier.name %></td>
+              <td><%= supplier.total_dues %></td>
+              <td><form action="/supplier-details"method="post"><button class="view-details"name= "supplierCode"value="<%= supplier.supplier_code %>">View Details</button></form></td>
+              <td><button class="add-rate" ><a href="/add-supplier-details?supplier_code=<%= supplier.supplier_code %>">Add/Update rate list</a></button></td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+
+      
+
+      
+    
+</body>
+</html>

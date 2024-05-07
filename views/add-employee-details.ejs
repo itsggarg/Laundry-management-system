@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Salary details</title>
+  <style>
+    body {
+      background-image: url('sal.jpg');
+      
+      background-position: center;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+    #salContainer {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      max-width: 500px;
+      margin: 0 auto;
+      margin-top: 50px;
+    }
+    h2 {
+      margin-top: 0;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border:#000000;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: #000000;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #3e8e41;
+    }
+  </style>
+</head>
+<div id="salContainer">
+  <h2>Enter Details</h2>
+  <form action="/addsal/<%= employee_code %>" method="POST">
+    <label for="amount">Salary amount:</label>
+    <input type="text" id="amount" name="amount"><br>
+  
+    <label for="previous_sal_due">Total salary dues:</label>
+    <input type="text" id="previous_sal_due" name="previous_sal_due"><br>
+  
+    <input type="submit" value="Save">
+  </form>
+  </div>
+  </div>
+</div>
+
+
+
+<div id="sal">
+
+</div>
+<body>
+  <div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>employee details</title>
+    <a href="/" class="home-button"><i class="fas fa-home"></i></a>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <a href=" /supplier " class="previous-button">
+    <img src="/home-icon.png" alt="Previous">
+    </a>
+    
+  </head>
+
+  <style>
+    body {
+  background-image: url('supplier.png');
+  background-size: cover;
+  background-attachment: fixed;
+  
+}
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: #333;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 10px;
+      font-size: large;
+      color: rgb(0, 0, 0);
+      font-weight: bold;
+      border-bottom: 1px solid #ddd;
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+    th {
+      background-color: #49b8e3;
+      color: white;
+    }
+
+    tr:hover {
+      background-color: #ef8f8f;
+    }
+    p {
+      font-size: 40px;
+      text-align: center;
+      font-weight: bold;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+    }
+    li{
+      font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+     color: #333;
+     font-size: 20px;
+     padding: 20px;
+     border-bottom: 1px solid #ccc;
+     letter-spacing: 1.6px;
+    }
+
+    img {
+      background-color: #333;
+      margin: 2px;
+      padding: 5px;
+      position: absolute;
+      top: 100px;
+      left: 120px;
+      width: 80%;
+      height: 80%;
+      object-fit: cover;
+    }
+    #employee-details {
+    position: absolute;
+    top: 110px;
+    left: 120px;
+    width: 382px;
+    display: block;
+    margin: 0 auto;
+    max-width: 500px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 20px;
+    background-color: rgb(252, 182, 118);
+    border-radius: 10px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    }
+    #rate-info {
+    position: absolute;
+    top: 800px;
+    left: 120px;
+    width: 382px;
+    display: block;
+    margin: 0 auto;
+    width: 360px;
+    max-width: 500px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    
+    }
+
+    #contact-info {
+    position: absolute;
+    top: 460px;
+    left: 120px;
+    display: block;
+    margin: 0 auto;
+    width: 382px;
+    max-width: 500px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    
+    }
+    h2 {
+      
+  font-size: 28px; /* Set the font size */
+  font-weight: bold; /* Set the font weight */
+  color: #f9f7f7; 
+  margin-bottom: 10px; 
+  background-color: #6e095cd5;
+  border-radius: 6px;
+  padding: 12px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.employee-info {
+  background: linear-gradient(310deg , #d7a1aa 40%, #0dc0c3 60%);
+}
+.contact-info {
+  background: linear-gradient(310deg , #d7a1aa 40%, #0dc0c3 60%);
+}
+
+.rate-info {
+  background: linear-gradient(310deg , #d7a1aa 40%, #0dc0c3 60%);
+}
+.emp{
+  color: #ddd;
+
+}
+.emp1{
+  color: #ddd;
+  background-color: rgb(21, 73, 56);
+
+}
+
+.right-aligned {
+  text-align: left;
+  display: inline-block;
+  padding-left: 20px ;
+  min-width: 100px; /* Adjust the minimum width to your liking */
+}
+.right{
+  text-align: left;
+  display: inline-block;
+  padding-left: 156px ;
+  min-width: 100px; /* Adjust the minimum width to your liking */
+}
+.right1{
+  text-align: left;
+  display: inline-block;
+  padding-left: 162px ;
+  min-width: 100px; /* Adjust the minimum width to your liking */
+}
+
+.right2{
+  text-align: left;
+  display: inline-block;
+  padding-left: 26px ;
+  min-width: 100px; /* Adjust the minimum width to your liking */
+}
+.right3{
+  text-align: left;
+  display: inline-block;
+  padding-left: 4px ;
+  min-width: 100px; /* Adjust the minimum width to your liking */
+}
+
+h1 {
+  font-size: 2rem;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+  color: #c0cc72f5;
+  margin: 1rem 0;
+  top: 20px;
+  left: 10px;
+}
+h1 {
+  position: absolute;
+  top: 40px;
+  left: 12%;
+  transform: translateX(-50%, -50%);
+  opacity: 0;
+  filter: blur(10px);
+  animation: slide-right 0.5s ease-out forwards, fade-in 0.5s ease-out forwards;
+}
+
+h3{
+  font-size: 28px; /* Set the font size */
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bold; /* Set the font weight */
+  color: #333; /* Set the text color */
+  margin-bottom: 10px; /* Add some bottom margin */
+  /* Add any other styles you want */
+  background-color: #6e095cd5;
+  border-radius: 6px;
+  padding: 12px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+
+#employee-details {
+  animation: slide-in 0.5s forwards;
+}
+
+@keyframes slide-in {
+  0% {
+    top: -10%;
+  }
+  100% {
+    top: 100px;
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translate(-50%, -100%);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+
+.home-button {
+  position: fixed;
+  top: 26px;
+  right: 260px;
+  background-color: #333;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  z-index: 10;
+}
+
+.home-button:hover {
+  background-color: #555;
+}
+
+.fa-home {
+  font-size: 24px;
+}
+
+
+.previous-button {
+    display: inline-block;
+    padding: 10px;
+    background-color: #ccc;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .previous-button:hover {
+    background-color: #aaa;
+  }
+  
+  .previous-button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+  }
+    
+
+  </style>
+
+
+  <body>
+    <h1>Supplier details :</h1>
+    <% if (results && results.length > 0) { %>
+      <div id="employee-details" class="employee-info">
+        <h2 class="emp">Supplier name:  <span class="right-aligned"><%= results[0].name %></span></h2>
+        <h2 class="emp">Supplier code : <span class="right-aligned"><%= results[0].supplier_code %></span></h2>
+        <h2 class="emp1">Total payment dues  : <span class="right3"><%= results[0].total_dues %></span></h2>
+        
+      </div>
+    }
+      <div id="contact-info" class="contact-info">
+        <h2>Contact Information:</h2>
+        <ul>
+          <% results.forEach(function(result) { %>
+            <li><%= result.contact_no %></li>
+          <% }); %>
+        </ul>
+      </div>
+      
+      <div id="rate-info" class="rate-info">
+        <h2>Rate list of <%= results[0].name %> :</h2>
+        <table>
+            <thead>
+              <tr>
+                <th>Item name</th>
+                <th>Rate (in Rs)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% results.forEach(function(result) { %>
+                <tr>
+                  <td><%= result.product_name %></td>
+                  <td><%= result.rate %></td>
+                </tr>
+              <% }); %>
+            </tbody>
+          </table>
+      </div>
+      <script>
+        window.addEventListener('load', function() {
+          document.getElementById('content').style.display = 'block';
+        });
+      </script>
+
+    <% } else { %>
+    <p>Firstly Add all details</p>
+    <img src="error404.jpg" alt="" srcset="" />
+    <% } %>
+  </body>
+</html>

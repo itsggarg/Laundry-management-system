@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>customer</title>
+
+
+<style>
+    /* Body styles */
+body {
+  background-color: #f8f8f8;
+  font-family: Arial, sans-serif;
+}
+
+/* Table styles */
+table {
+  border-collapse: collapse;
+  width: 80%;
+  margin: 50px auto;
+  background-color: #fff;
+  box-shadow: 0px 0px 5px #ccc;
+}
+
+th, td {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  font-family: Tahoma, Verdana, sans-serif;
+}
+
+th {
+  background-color: #49b8e3;
+  color: white;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* Form styles */
+form {
+  display: block;
+  margin: 20px auto;
+  max-width: 500px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 80%;
+  padding:10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 0px 5px #aaa;
+}
+
+input[type="submit"] {
+  background-color: #8d5c27;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+/* Search container styles */
+#searchContainer {
+  position: relative;
+  top: -50px;
+  left: 50px;
+  display: block;
+  margin: 0 auto;
+  max-width: 500px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  border: 2px solid black;
+  padding: 10px;
+}
+
+#searchContainer h4 {
+  margin: 20px 0;
+  text-align: center;
+}
+
+#searchContainer label {
+  margin-right: 10px;
+}
+
+#searchContainer button {
+  background-color: #8d5c27;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#searchContainer button:hover {
+  background-color: #3e8e41;
+}
+
+.view-details, .view-bills {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.view-details:hover, .view-bills:hover {
+  background-color: #3e8e41;
+}
+
+.view-details {
+  background-color: #49b8e3;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.view-details:hover {
+  background-color: #3c8dc5;
+}
+.view Bills {
+  background-color: #49b8e3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.view Bills:hover {
+  background-color: #2c88a5;
+}
+
+
+
+</style>
+
+<div style="display:inline-block; width: 20%;">
+<div style="display:inline-block; width: 100%; border: 2px solid black; padding: 10px;">
+
+<div id="customerFormContainer">
+<h2>Enter Details</h2>
+<form method="POST" action="/addCustomer">
+  <label for="id">customer ID:</label>
+  <input type="text" id="customer_code" name="customer_code"><br>
+
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name"><br>
+
+  <label for="previous_money_dues">previous_money_dues:</label>
+  <input type="number" id="previous_money_dues" name="previous_money_dues"><br>
+
+  <input type="submit" value="Add customer">
+</form>
+</div>
+</div>
+</div>
+
+<div style="display:inline-block; width: 20%;">
+
+  <div id="searchContainer">   
+<div>
+    <form method="GET" action="/searchCustomer">
+      <label for="searchName">Search by Name:</label>
+      <input type="text" id="searchName" name="searchName">
+      <button type="submit">Search</button>
+    </form>
+  </div>
+
+<h4>OR</h4>
+
+<div>
+    <form method="GET" action="/searchbycustomercode">
+      <label for="customer_code">Search by customer code:</label>
+      <input type="number" id="customer_code" name="customer_code">
+      <button type="submit">Search</button>
+    </form>
+  </div>
+</div>
+    </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+    <table>
+        <thead>
+          <tr>
+            <th>customer code</th>
+            <th>Name</th>
+            <th>previous_money_dues</th>
+            <th>View details</th>
+            <th>View bills</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% customers.forEach(function(customer) { %>
+            <tr>
+              <td><form action="/customer"method="post"><%= customer.customer_code %></form></td>
+              <td><%= customer.name %></td>
+              <td><%= customer.previous_money_dues %></td>
+              <td><form action="/customer-details"method="post"><button class="view-details"name= "customerCode"value="<%= customer.customer_code %>">View Details</button></form></td>
+              <td><form action="/bills" method="post"><button class="view-Bills" name="customerCode" value="<%= customer.customer_code %>">View Bills</button></form></td>
+
+            </td>
+
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+
+      
+
+      
+    
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depository</title>
+    
+
+
+
+    <style>
+
+
+
+        table {
+          border-collapse: collapse;
+          width: 80%;
+          
+        }
+    
+        th, td {
+          text-align: left;
+          padding: 10px;
+          width: 20px;
+          border-bottom: 1px solid #ddd;
+          font-family: Tahoma, Verdana, sans-serif;
+        }
+    
+        th {
+          background-color: #49b8e3;
+          color: white;
+        }
+    
+        tr:hover {
+          background-color: #f5f5f5;
+        }
+      </style>
+
+
+<style>
+    /* Style the form container */
+    #employeeFormContainer {
+      display: block;
+      margin: 20px auto;
+      max-width: 500px;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 10px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    }
+
+    .empadd {
+  background: linear-gradient(310deg , #d7a1aa 40%, #0dc0c3 60%);
+}
+
+
+    #searchContainer {
+    position: relative;
+    top: -100px;
+    left: 50px;
+    display: block;
+    margin: 0 auto;
+    max-width: 500px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: 2px solid black;
+    padding: 10px;
+    
+    }
+    a{
+  text-decoration: none;
+    color: black;
+}
+
+    
+  
+    /* Style the form labels */
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+  
+    /* Style the form inputs */
+    input[type="text"],
+    input[type="number"],
+    select {
+      width: 80%;
+      padding:10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: none;
+      box-shadow: 0px 0px 5px #aaa;
+    }
+  
+    /* Style the submit button */
+    input[type="submit"] {
+      background-color: #8d5c27;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+  
+    input[type="submit"]:hover {
+      background-color: #3e8e41;
+    }
+    
+    .view-details {
+  background-color: #dd9f84; /* set background color */
+  color: rgb(0, 0, 0); /* set font color */
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 10px 20px; /* set button padding */
+  text-align: center; /* center button text */
+  display: inline-block; /* make button inline */
+  font-size: 14px; /* set font size */
+  margin: 4px 2px; /* set margin */
+  cursor: pointer; /* add cursor pointer */
+  border-radius: 5px; 
+}
+
+.add-contact {
+  background-color: #dd9f84; /* set background color */
+  color: rgb(0, 0, 0); /* set font color */
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 10px 20px; /* set button padding */
+  text-align: center; /* center button text */
+  display: inline-block; /* make button inline */
+  font-size: 14px; /* set font size */
+  margin: 4px 2px; /* set margin */
+  cursor: pointer; /* add cursor pointer */
+  border-radius: 5px; 
+}
+.add-salary {
+  background-color: #dd9f84; /* set background color */
+  color: rgb(0, 0, 0); /* set font color */
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 10px 20px; /* set button padding */
+  text-align: center; /* center button text */
+  display: inline-block; /* make button inline */
+  font-size: 14px; /* set font size */
+  margin: 4px 2px; /* set margin */
+  cursor: pointer; /* add cursor pointer */
+  border-radius: 5px; 
+}
+
+
+button {
+  color: rgb(54, 12, 12); /* set the text color to white */
+  background-color: rgb(100, 153, 177); /* set the background color to blue */
+  border: none; /* remove the button border */
+  padding: 10px 20px; /* add some padding to the button */
+  box-shadow: 0 0 10px rgba(206, 176, 176, 0.59); 
+}
+
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* Header styles */
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  font-size: 36px;
+  text-transform: uppercase;
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 40px;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+th {
+  background-color: #49b8e3;
+  color: #fff;
+  text-align: left;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+/* Responsive styles */
+@media (max-width: 767px) {
+  table {
+    font-size: 14px;
+  }
+  
+  th, td {
+    padding: 8px;
+  }
+  
+  th {
+    font-size: 16px;
+  }
+  
+  h1 {
+    font-size: 28px;
+  }
+}
+
+
+
+
+  </style>
+
+
+<form action="/bill/search" method="GET">
+  <label for="bill_code">Search by bill code:</label>
+  <input type="text" id="bill_code" name="bill_code">
+  <button type="submit">Search</button>
+</form>
+
+
+<form action="/bill/search1" method="GET">
+  <label for="customer_code">customer code:</label>
+  <input type="text" id="customer_code" name="customer_code">
+  <button type="submit">Search</button>
+</form>
+
+
+
+
+
+<body>
+    <table>
+        <thead>
+          <tr>
+            <th>customer code</th>
+            <th>bill code</th>
+            <th>total amount</th>
+            <th>date</th>
+            <th>payment status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% bill.forEach(function(bill) { %>
+            <tr>
+              <form action="/bill"method="post"></form>
+              <td><%=bill.customer_code %></td>
+             <td><%= bill.bill_code %></td>
+              <td><%=bill.total_amount %></td>
+              <td><%=bill.date %></td>
+              <td><%=bill.payment_status %></td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+
+      
+
+      
+    
+</body>
+</html>

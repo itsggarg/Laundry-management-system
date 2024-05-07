@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>employee</title>
+    
+
+
+
+    <style>
+  
+  
+
+
+        table {
+          border-collapse: collapse;
+          width: 80%;
+          
+        }
+    
+        th, td {
+          text-align: left;
+          padding: 10px;
+          width: 20px;
+          border-bottom: 1px solid #ddd;
+          font-family: Tahoma, Verdana, sans-serif;
+        }
+    
+        th {
+          background-color: #49b8e3;
+          color: white;
+        }
+    
+        tr:hover {
+          background-color: #f5f5f5;
+        }
+      </style>
+
+
+<style>
+    /* Style the form container */
+    #employeeFormContainer {
+      display: block;
+      margin: 20px auto;
+      max-width: 500px;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 10px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    }
+
+    .empadd {
+  background: linear-gradient(310deg , #d7a1aa 40%, #0dc0c3 60%);
+}
+
+
+    #searchContainer {
+    position: relative;
+    top: -100px;
+    left: 50px;
+    display: block;
+    margin: 0 auto;
+    max-width: 500px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: 2px solid black;
+    padding: 10px;
+    
+    }
+    a{
+  text-decoration: none;
+    color: black;
+}
+
+    
+  
+    /* Style the form labels */
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+  
+    /* Style the form inputs */
+    input[type="text"],
+    input[type="number"],
+    select {
+      width: 80%;
+      padding:10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: none;
+      box-shadow: 0px 0px 5px #aaa;
+    }
+  
+    /* Style the submit button */
+    input[type="submit"] {
+      background-color: #8d5c27;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+  
+    input[type="submit"]:hover {
+      background-color: #3e8e41;
+    }
+    
+    .view-details {
+  background-color: #dd9f84; /* set background color */
+  color: rgb(0, 0, 0); /* set font color */
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 10px 20px; /* set button padding */
+  text-align: center; /* center button text */
+  display: inline-block; /* make button inline */
+  font-size: 14px; /* set font size */
+  margin: 4px 2px; /* set margin */
+  cursor: pointer; /* add cursor pointer */
+  border-radius: 5px; 
+}
+
+.add-contact {
+  background-color: #dd9f84; /* set background color */
+  color: rgb(0, 0, 0); /* set font color */
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 10px 20px; /* set button padding */
+  text-align: center; /* center button text */
+  display: inline-block; /* make button inline */
+  font-size: 14px; /* set font size */
+  margin: 4px 2px; /* set margin */
+  cursor: pointer; /* add cursor pointer */
+  border-radius: 5px; 
+}
+.add-salary {
+  background-color: #dd9f84; /* set background color */
+  color: rgb(0, 0, 0); /* set font color */
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 10px 20px; /* set button padding */
+  text-align: center; /* center button text */
+  display: inline-block; /* make button inline */
+  font-size: 14px; /* set font size */
+  margin: 4px 2px; /* set margin */
+  cursor: pointer; /* add cursor pointer */
+  border-radius: 5px; 
+}
+
+
+button {
+  color: rgb(54, 12, 12); /* set the text color to white */
+  background-color: rgb(100, 153, 177); /* set the background color to blue */
+  border: none; /* remove the button border */
+  padding: 10px 20px; /* add some padding to the button */
+  box-shadow: 0 0 10px rgba(206, 176, 176, 0.59);
+  
+}
+
+
+
+
+
+  </style>
+
+
+
+
+
+<div style="display:inline-block; width: 20%;">
+<div style="display:inline-block; width: 100%; border: 2px solid black; padding: 10px;">
+
+<div id="employeeFormContainer"class="empadd">
+<h2>Enter Details</h2>
+<form method="POST" action="/addEmployee">
+  <label for="id">Employee ID:</label>
+  <input type="text" id="employee_code" name="employee_code"><br>
+
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name"><br>
+
+  <label for="age">Age:</label>
+  <input type="number" id="age" name="age"><br>
+
+  <label for="sex">Sex:</label>
+  <select id="sex" name="sex">
+    <option value="M">M</option>
+    <option value="F">F</option>
+  </select><br>
+
+  <input type="submit" value="Add Employee">
+</form>
+</div>
+</div>
+</div>
+
+<div style="display:inline-block; width: 20%;">
+
+  <div id="searchContainer">   
+<div>
+    <form method="GET" action="/searchEmployee">
+      <label for="searchName">Search by Name:</label>
+      <input type="text" id="searchName" name="searchName">
+      <button type="submit">Search</button>
+    </form>
+  </div>
+
+<h4>OR</h4>
+
+<div>
+    <form method="GET" action="/searchByCode">
+      <label for="employee_code">Search by Employee code:</label>
+      <input type="number" id="employee_code" name="employee_code">
+      <button type="submit">Search</button>
+    </form>
+  </div>
+</div>
+    </div>
+
+    
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+    <table>
+        <thead>
+          <tr>
+            <th>Employee code</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Sex</th>
+            <th>View details</th>
+            <th>Add Contact No.</th>
+            <th>Add salary details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% employees.forEach(function(employee) { %>
+            <tr>
+              <td><form action="/employee"method="post"><%= employee.employee_code %></form></td>
+              <td><%= employee.name %></td>
+              <td><%= employee.age %></td>
+              <td><%= employee.sex %></td>
+              <td><form action="/employee-details" method="post"><button class="view-details"name= "employeeCode"value="<%= employee.employee_code %>">View Details</button></form></td>
+              <td><form action="/add-employee-details/<%=employee.employee_code%>" method="POST">
+                <input type="text" name="contact" placeholder="Contact" />
+                <button class="add-contact" type="submit">Add Contact</button>
+              </form></td>
+              <td><button class="add-salary"> <a href="/add-employee-details?employee_code=<%= employee.employee_code %>">Add/update salary</a></button></td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+
+      
+
+      
+    
+</body>
+</html>
